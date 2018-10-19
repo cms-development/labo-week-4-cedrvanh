@@ -1,0 +1,51 @@
+<header class="main-nav navbar navbar-expand-md border-bottom" role="banner">
+  <div class="container">
+    {{ page.header }}
+    {# /.layout-header #}
+  </div>
+</header>
+
+<div class="bg-danger text-white">
+    <div class="container">
+        <div class="row">
+            {% if page.subheader_left %}
+            <section class="col-sm-6 p-3">
+                {{ page.subheader_left }}
+                {# /.layout-subheader_left #}
+            </section>
+            {% endif %}
+
+            {% if page.subheader_right %}
+            <section class="col-sm-6 p-3">
+                {{ page.subheader_right }}
+                {# /.layout-subheader_right #}
+            </section>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container mb-5 mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <a id="main-content" tabindex="-1"></a>
+      {{ page.content }}
+      {# /.layout-content #}
+    </div>
+
+    {% if page.sidebar %}
+    <aside class="col-md-4 border-left" role="complementary">
+        {{ page.sidebar }}
+    </aside>
+    {% endif %}
+  </div>
+</main>
+
+{% if page.footer %}
+<footer class="footer border-top">
+  <div class="container">
+    {{ page.footer }}
+  </div>
+</footer>
+{% endif %}
+{# /.layout-container #}
